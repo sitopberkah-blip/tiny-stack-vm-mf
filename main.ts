@@ -83,7 +83,7 @@ function run(p, q, o) {
     }
   }
 }
-for (const d of readdirSync(I).sort()) {
+for (const d of readdirSync(I)) {
   const o = new Uint8Array(65536);
   const [code, len] = run(readFileSync(join(I, d, 'program.bin')), readFileSync(join(I, d, 'input.bin')), o);
   mkdirSync(join(O, d), { recursive: true });
